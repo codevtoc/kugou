@@ -1,0 +1,273 @@
+.navWrap{
+      width:100%;height:55px;
+      background:#2c323b;
+    }
+    .navWrap>.nav{
+      width:1000px;
+      margin:0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .navWrap>.nav>ul{
+      display: flex;
+    }
+    .navWrap>.nav>.homeNav>li{
+      padding:0 30px;
+      font-size: 16px;
+      font-family: 微软雅黑;
+      color:#ddd;
+      position: relative;
+    }
+    .navWrap>.nav>.homeNav>li:hover{
+      background-color: #009af3;
+    }
+    .navWrap>.nav>.homeNav>li:hover>a{
+      color:#fff;
+    }
+    .navWrap>.nav>.homeNav>li>a{
+      color:#aaa;
+      line-height: 55px;
+    }
+    .homeNavMore:hover .iconxiajiantou{
+      display: inline-block;
+      transform: rotate(180deg);
+      vertical-align: middle;
+    }
+    .homeNavMore:hover>.homeNavMoreHide{
+      display: block;
+    }
+    .homeNavMoreHide{
+      position: absolute;
+      z-index: 9;
+      width:100%;
+      left:0;top:55px;
+      text-align: center;
+      line-height: 37px;
+      display: none;
+    }
+    .homeNavMoreHide a{
+      color:#fff;
+      font-weight: lighter;
+      font-size: 15px;
+    }
+    .homeNavMoreHide>li{
+      height:37px;
+      /* background:#2c323b; */
+      background-color: #2c323b;
+      
+    }
+    .homeNavMoreHide>li:hover{
+      cursor: pointer;
+      background-color:#383d44;
+    }
+
+
+
+    .navWrap>.nav>.subNav>li{
+      line-height: 55px;
+      margin-left:30px;
+    }
+    .navWrap>.nav>.subNav>li>a{
+      color:#ddd;
+      font-size: 13px;
+    }
+
+
+
+
+
+
+
+
+
+    .pc_temp_content{
+      width:1000px;
+      margin:0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .pc_rank_sidebar{
+      width:220px;
+      border:1px solid #e0e0e0;
+      float: left;
+    }
+    .pc_rank_sidebar ul{
+      overflow: hidden;
+      transition: all .5s;
+    }
+    .pc_rank_sidebar>p{
+      height: 45px;
+      font-size: 16px;
+      color:#555;
+      line-height: 45px;
+      padding-left: 12px;
+      cursor: pointer;
+    }
+    .pc_rank_sidebar li{
+      height: 40px;
+      padding-left: 12px;
+      cursor: pointer;
+      line-height: 40px;
+    }
+    .pc_rank_sidebar li:hover{
+      background-color: #eeeeee;
+    }
+    .pc_rank_sidebar li:hover>a{
+      color:#169af3;
+    }
+    .pc_rank_sidebar li>a{
+      color: #555;
+      font-size: 14px;
+    }
+    .pc_rank_sidebar img{
+      vertical-align: middle;
+      margin-right: 3px;
+    }
+    .pc_rank_sidebar .iconfont{
+      float: right;
+      margin-right: 18px;
+      font-size: 14px;
+      font-weight: bolder;
+    }
+    #rank1{height:280px;}
+    #rank2,#rank3{height:120px;}
+
+
+
+
+    
+
+
+
+    .pc_rank_sidebar ul.hide{
+      overflow: hidden;
+      height:0 !important;
+    }
+
+
+
+
+
+
+    .rank_active{
+      background-color: #169af3;
+    }
+    .rank_active a{color:#fff !important;}
+    
+    .pc_temp_container{
+      width:780px;
+      padding-left: 30px;
+    }
+    .pc_temp_title{
+      width:750px;
+      height:57px;
+      line-height: 57px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 24px;
+    }
+    .pc_temp_title h3{
+      font-size: 24px;
+      color:#333;
+      font-weight: 400;
+    }
+    .pc_temp_title span{
+      font-size: 12px;
+      color:#aaa;
+    }
+    .pc_temp_title button{
+      width:112px;height:34px;
+      background-color: #158fe1;
+      color:#fff;
+      border-radius: 2px;
+      float: right;
+      margin-top:12px;
+    }
+    .pc_temp_title .iconfont{
+      color:#fff;
+    }
+
+    .pc_temp_songhead{
+      color:#999;
+      padding-bottom: 10px;
+    }
+
+    .pc_temp_songlist>ul>li{
+      height: 55px;
+      line-height: 55px;
+      font-size: 14px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+    
+    .pc_temp_songlist input{
+      margin-right: 10px;
+      display: inline-block;
+      height: 14px;
+      background-color: #fff;
+    }
+    .pc_temp_songlist .songname{
+      margin-left: 10px;
+    }
+    .pc_temp_songlist .duration{
+      float: right;
+      padding-right: 12px;
+    }
+
+    
+    .pc_down{
+      font-size: 16px;
+      color:#666;
+      text-align: center;
+      padding-left: 160px;
+    }
+    .pc_down button{
+      width:108px;height:36px;
+      background-color: #158fe1;
+      line-height: 36px;
+      color: #fff;
+      margin-left: 36px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+
+
+
+
+
+    #song_list ul>li .duration,
+    #song_list ul>li .iconfont:not(.iconnew){
+      float: right;
+    }
+    #song_list ul>li .iconfont:not(.iconnew){
+      margin-right: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      display: none;
+    }
+    #song_list .iconnew{
+      color:#f00;
+      font-weight: lighter !important;
+      font-size: 22px;
+      vertical-align: middle;
+      margin-left:18px;
+    }
+    .pc_temp_songlist>ul>li>a{
+      display: block;
+    }
+    #song_list ul a:hover .songName,
+    #song_list ul a:hover .duration{
+      color:#0c8ed9;
+    }
+    .show{
+      display: inline !important;
+    }
+    .top3{
+      font-size:18px !important;
+      color: #fe2c62 !important;
+    }    
+    .pc_temp_songlist>ul>li .songNum{
+      font-size: 15px;
+      color:#999;
+    }

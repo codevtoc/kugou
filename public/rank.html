@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/rank.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+  <script src="js/jquery-1.11.3.js"></script>
+  <!-- 通过ajax请求把页头请求过来 -->
+  <script src="js/header.js"></script>
+  <script src='js/footer.js'></script>
+  <style>
+    
+    
+
+  </style> 
+</head>
+<body>
+  <!-- 网页头 -->
+  <div id="totalHeader"></div>
+  <br><br>
+
+  <!-- 榜单 -->
+  <div class="pc_temp_content">
+    <!-- 左边 -->
+    <div class="pc_rank_sidebar">
+      <p data-target="rank1">热门榜单 <span class="iconfont iconshangjiantou1"></span></p>
+      <ul class="remenRank" id="rank1">
+        <li class="rank_active" ><a href="javascript:;" target-src='kgbsBang'>
+          <img src="https://imgessl.kugou.com/temppic/20130807/20130807185439172736.png" alt="">酷狗飙升榜
+        </a></li>
+        <li><a href="javascript:;" target-src='kgTOP500'>
+          <img src="https://imgessl.kugou.com/temppic/20130807/20130807185450567609.png" alt="">酷狗TOP500
+        </a></li>
+        <li><a href="javascript:;" target-src='wlhgBang'>
+          <img src="https://pcweb.kugou.com/k8/static/images/wlhg.png" alt="">网络红歌榜
+        </a></li>
+        <li><a href="javascript:;" target-src='hyxgBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20171120/20171120102326715438.jpg" alt="">华语新歌榜
+        </a></li>
+        <li><a href="javascript:;" target-src='omxgBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20171120/20171120102536373818.jpg" alt="">欧美新歌榜
+        </a></li>
+        <li><a href="javascript:;" target-src='hgxgBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20171120/20171120102907761563.jpg" alt="">韩国新歌榜
+        </a></li>
+        <li><a href="javascript:;" target-src='rbxgBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20171120/20171120103030215744.jpg" alt="">日本新歌榜
+        </a></li>
+      </ul>
+      <p data-target="rank2">特色音乐榜 <span class="iconfont iconshangjiantou1"></span></p>
+      <ul class="teseRank" id="rank2">
+        <li><a href="javascript:;" target-src='dyrgBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20180712/20180712154305100613.jpg" alt=""></span>电音热歌榜
+        </a></li>
+        <li><a href="javascript:;" target-src='ysjqBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20180621/20180621155507253271.jpg" alt=""></span>影视金曲榜
+        </a></li>
+        <li><a href="javascript:;" target-src='yyjqBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20180712/20180712154500997723.jpg" alt=""></span>粤语金曲榜
+        </a></li>
+      </ul>
+      <p data-target="rank3">全球榜 <span class="iconfont iconshangjiantou1"></span></p>
+      <ul class="quanqiuRank" id="rank3">
+        <li><a href="javascript:;" target-src='BBBang'>
+          <img src="https://imgessl.kugou.com/temppic/20130807/20130807192258314669.png" alt=""></span>美国BillBoard榜
+        </a></li>
+        <li><a href="javascript:;" target-src='ygdqBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20161013/20161013180833243081.png" alt=""></span>英国单曲榜
+        </a></li>
+        <li><a href="javascript:;" target-src='rbgxBang'>
+          <img src="https://imgessl.kugou.com/stdmusic/20151222/20151222142442217161.png" alt=""></span>日本公信榜
+        </a></li>
+      </ul>
+    </div>
+    <!-- 右边 -->
+    <div class="pc_temp_container">
+      <br>
+      <div class="pc_temp_title">
+        <h3>酷狗飙升榜 <span>2020-02-04 更新</span>
+        <button class='play_all'><span class="iconfont iconbofangsanjiaoxing"></span> 播放全部</button></h3>
+      </div>
+      
+      <div class="pc_temp_songhead">
+        <label>
+          <input id="chbAll" type="checkbox" checked style="vertical-align:middle;">&nbsp;全选
+        </label>
+      </div>
+
+      <div class="pc_temp_songlist" id="song_list">
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+  <br><br>  
+  <div class="pc_down">
+    <p>查看更多内容, 请下载客户端<button>立即下载</button></p>
+  </div>
+  <br><br><br>
+  <!-- 网页脚 -->
+  <footer id="totalFooter"></footer>
+</body>
+<script>
+  (function(){
+    "use strict";
+    
+    // 页面加载直接显示第一个榜单
+    (function(){
+      $.ajax({
+        url:`/rank/v1/kgbsBang`,
+        type:'get',
+        success:(res)=>{
+          fillInfo(res);
+      }});
+    })();
+
+    var $ranks=$('.pc_rank_sidebar li');
+    $ranks.click(function(){
+      var $tarRank=$(this).children('a').attr('target-src');
+      $.ajax({
+        url:`/rank/v1/${$tarRank}`,
+        type:'get',
+        success:(res)=>{
+          fillInfo(res);
+        }
+      })
+    });
+
+    // 定义把信息填到页面上的函数
+    var fillInfo=function(res){
+      var $songList=$('#song_list ul');
+          $songList.html('');
+          var listLength=res.length;
+          for(var i=0;i<listLength;i++){
+            var $li=$(`<li>
+                      <a>
+                        <input type='checkbox' checked>
+                        <span class='songNum'>${i+1}</span>
+                        <span class='iconfont iconnew'></span>
+                        <span class="songName">${res[i].name}</span>
+                        <span class='duration'>${res[i].songtime}</span>
+                        <span class='iconfont iconbofangsanjiaoxing'></span>
+                        <span class='iconfont iconxiazai'></span>
+                        <span class='iconfont iconfenxiang'></span>
+                      </a>
+                      </li>`);
+            $songList.append($li);
+            $li.hover(function(){
+              $(this).children().children('.iconfont:not(.iconnew)').toggleClass('show');
+            });
+          };
+          $('.pc_temp_songlist>ul>li .songNum:lt(3)').addClass('top3');
+          // 点击单选
+          var $chbs=$('.pc_temp_songlist input');
+          $chbs.click(function(){
+            var $chbsn=$('.pc_temp_songlist input');
+            var unCh=[].every.call($chbsn,element => {
+              return $(element).prop('checked');
+            });
+            if(unCh){$('#chbAll').prop('checked',true);
+            }else{
+              $('#chbAll').prop('checked',false);
+            }
+          });
+    }
+    // 点击全选
+    $('#chbAll').click(function(){
+      var $chbs=$('.pc_temp_songlist input');
+      $chbs.prop('checked',$(this).prop('checked'));
+    });
+    
+    // 右边榜单的上下展开效果
+    var $ps=$('.pc_rank_sidebar>p');
+    $ps.click(function(){
+      $(this).next().toggleClass('hide');
+      var $span=$(this).children('.iconfont');
+      if($span.hasClass('iconshangjiantou1')){
+        $span.removeClass('iconshangjiantou1').addClass('iconxiajiantou');
+      }else{
+        $span.removeClass('iconxiajiantou').addClass('iconshangjiantou1');
+      }
+    });
+    
+    
+  })()
+  
+</script>
+</html>

@@ -1,0 +1,846 @@
+#header{
+  width:1000px;height:78px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+#header>.search_input{
+  display:flex;
+  margin-left:-60px;
+  border:1px solid #999;
+}
+#header>.search_input>input{
+  width:249px;height:34px;
+  padding: 6px;
+} 
+#header>.search_input>.sear{
+  width:34px;height:34px;
+  background-size: 34px ;
+  cursor:pointer;
+  text-align: center;
+  line-height: 34px;
+}
+
+#header>.topNav{
+  display:flex;
+  width:402px;height:25px;
+  font-size:13px;
+}
+#header>.topNav>ul{
+  display:flex;
+  flex-direction:row;
+  border-right:1px solid #aaa;
+  color:#777;
+  width:262px;height:19px;
+  justify-content:space-around;
+}
+#header>.topNav>ul>li:hover>a{color: #009af3;}
+#header>.topNav>ul a{
+  color:#777;
+}
+#header>.topNav>a{
+  color:#fff;
+  width:50px;height:30px;
+  background:#169af3;
+  text-align:center;
+  line-height:30px;
+  margin-left:28px;
+  border-radius:2px;
+  margin-top: -7px;
+}
+
+
+.navWrap{
+  width:100%;height:55px;
+  background:#2c323b;
+}
+.navWrap>.nav{
+  width:1000px;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.navWrap>.nav>ul{
+  display: flex;
+}
+.navWrap>.nav>.homeNav>li{
+  padding:0 30px;
+  font-size: 16px;
+  font-family: 微软雅黑;
+  color:#ddd;
+  position: relative;
+}
+.navWrap>.nav>.homeNav>li:hover{
+  background-color: #009af3;
+}
+.navWrap>.nav>.homeNav>li:hover>a{
+  color:#fff;
+}
+.navWrap>.nav>.homeNav>li>a{
+  color:#aaa;
+  line-height: 55px;
+}
+.homeNavMore:hover .iconxiajiantou{
+  display: inline-block;
+  transform: rotate(180deg);
+  vertical-align: middle;
+}
+.homeNavMore:hover>.homeNavMoreHide{
+  display: block;
+}
+.homeNavMoreHide{
+  position: absolute;
+  z-index: 9;
+  width:100%;
+  left:0;top:55px;
+  text-align: center;
+  line-height: 37px;
+  display: none;
+}
+.homeNavMoreHide a{
+  color:#fff;
+  font-weight: lighter;
+  font-size: 15px;
+}
+.homeNavMoreHide>li{
+  height:37px;
+  /* background:#2c323b; */
+  background-color: #2c323b;
+  
+}
+.homeNavMoreHide>li:hover{
+  cursor: pointer;
+  background-color:#383d44;
+}
+
+.swiper-slide{
+  cursor: pointer;
+}
+
+
+
+.navWrap>.nav>.subNav>li{
+  line-height: 55px;
+  margin-left:30px;
+}
+.navWrap>.nav>.subNav>li:hover>a{
+  color:#009af3;
+}
+.navWrap>.nav>.subNav>li>a{
+  color:#ddd;
+  font-size: 13px;
+}
+
+
+    .swiper-container>.download{
+      height:60px;width:100%;
+      position:absolute;
+      bottom:4px;
+      background:rgba(0,0,0,.3);
+      z-index:10;
+    }
+    .swiper-container>.download li:hover .iconfont{
+      animation: fl .08s;
+    }
+    @keyframes fl{
+      0%{opacity: 0;}
+      100%{opacity: 1;}
+    }
+    .swiper-container>.download .iconfont{
+      font-size: 28px;
+      vertical-align: middle;
+    }
+    .swiper-container>.download>ul{
+      width:745px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+    }
+    .swiper-container>.download>ul>li{
+      line-height:60px;
+      color:rgba(255,255,255,.2);
+    }
+    .swiper-container>.download>ul img{
+      vertical-align:middle;
+      margin-right:12px;
+    }
+    .swiper-container>.download>ul a{
+      color:#fff;
+      font-size:15px;
+    }
+
+    .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
+      bottom:66px;
+    }
+
+
+/*精选歌单两个*/
+    /* 轮播图下方歌单和榜单 */
+    .subContentM{
+      width:1000px;
+      margin:40px auto 0;
+    }
+    .subContentM:after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+    .subContentM>.selectSongList{
+      width:660px;
+      display:flex;
+      float:left;
+    }
+    
+    .subContentM>.itemTitle{
+      width:650px;height:60px;
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:13px;
+      float:left;
+    }
+
+    .subContentM>.it1{
+      width:320px;height:60px;
+      float:right;
+      margin-top:-73px;
+    }
+
+    .subContentM .itemTitle h3{
+      font-size:28px;
+      font-weight:lighter;
+      color:#555;
+      line-height:60px;
+    }
+    .subContentM .itemTitle>h3>span{color:#009af3;}
+    .subContentM .itemTitle>a{font-size:13px;color:#999;
+      line-height:60px;
+    }
+    .subContentM>div{
+      position: relative;
+    }
+    .selectSongList .iconbofang1{
+      font-size: 36px;
+      color:#b0b0b0;
+      cursor: pointer;
+      position: absolute;
+      right:5px;
+      bottom:5px;
+      z-index: 99;
+      display: none;
+    }
+    .selectSongList .iconbofang1:hover{
+      color:#fff;
+    }
+    .selectSongList .Cover:hover .iconbofang1{
+      display: block;
+    }
+
+
+
+
+
+
+    .selectSongList>div:first-child{margin-right:5px;
+      position:relative;
+    }
+    
+    .selectSongList>div:first-child,
+    .selectSongList>div:first-child img{
+      width:325px;height:325px;
+    }
+    
+    .selectSongList>div:first-child .cptB,
+    .selectSongList>div:first-child .cptT,
+    .selectSongList .d_c>.cptT,
+    .selectSongList .d_c>.cptB
+    {
+      position:absolute;
+    }
+    .selectSongList>div:first-child .cptB{
+      width:100%;
+      bottom:0px;right:0px;
+      padding:8px;
+      color:#fff;
+      font-size:14px;
+      background:rgba(0,0,0,.3);
+    }
+    .selectSongList>div:first-child .cptT{
+      top:0px;right:0px;
+      display:block;
+      width:160px;height:30px;
+      text-align:right;
+      background-image:linear-gradient(to left,rgba(0,0,0,.4),rgba(0,0,0,0));
+      line-height:30px;
+      color:#fff;
+      font-size:13px;
+      padding-right:8px;
+    }
+    .selectSongList .cptT>span{
+      margin-right:8px;
+    }
+
+    .selectSongList .d_c{position:relative;}
+    .selectSongList .d_c .cptT{
+      position:absolute;top:0px;
+      text-align: right;
+      width:100%;height:30px;
+      background-image:linear-gradient(to left,rgba(0,0,0,.4),rgba(0,0,0,0));
+      line-height:30px;
+      color:#fff;
+      font-size:13px;
+      padding-right:8px;
+    }
+    .selectSongList .d_c .cptB{
+      width:160px;height:50px;
+      background: rgba(0,0,0,.4);
+      position: absolute;bottom:0px;
+      padding:6px 8px;
+      color:#fff;
+      font-size:14px;
+    }
+    .selectSongList .d_c .cptB>p{
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+
+    
+
+    
+    .selectSongList>.sf>.d13{margin-right:5px;}
+
+    .selectSongList>.sf>div,
+    .selectSongList>.sf>div img{
+      width:160px;height:160px;
+    }
+
+    .selectSongList>.sf{
+      width:330px;height:325px;
+      float:left;
+      display:flex;
+      flex-wrap:wrap;
+    }
+
+
+    /* 精选歌单左边的蒙层 */
+    .selectSongList>div>.Cover{position:relative;}
+    .selectSongList>div>.Cover>a{
+      display: block;
+      position:absolute;top:-329px;
+      width:325px;height:325px;
+      z-index:99;
+      background:rgba(0,0,0,0);
+    }
+    .selectSongList>div:first-child>.Cover>a:hover{
+      background-color:rgba(0,0,0,.3);
+    }
+    
+
+    /* 精选歌单右边的蒙层 */
+    .selectSongList>.sf>.d_c>.Cover{position:relative;}
+    .selectSongList>.sf>.d_c>.Cover>a{
+      display: block;
+      width:160px;height:160px;
+      position:absolute;top:-164px;left:0px;
+      background:rgba(0,0,0,0);
+      z-index: 99;
+    }
+    .selectSongList>.sf>.d_c>.Cover>a:hover{
+      background-color:rgba(0,0,0,.3);
+;    }
+
+    
+
+    .subContentM>.itemContent{
+      float:right;
+    }
+    .subContentM>.itemContent>.nowSongTab{
+      width:320px;height:325px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+
+    }
+    .subContentM>.itemContent ul{
+      height: 325px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .subContentM>.itemContent li{
+      width:320px;height:98px;
+      position:relative;
+    }
+    .subContentM>.itemContent li img{
+      width:98px;
+    }
+    .itemContent .rmbdCover{
+      width:98px;height:98px;
+      background-color: rgba(0,0,0,.3);
+      position: absolute;
+      left: 0;top:0;
+      z-index: 10;
+      cursor: pointer;
+      display: none;
+    }
+    .itemContent li:hover .rmbdCover{
+      display: block;
+    }
+    .itemContent .rmbdCover .iconbofang1{
+      font-size: 32px;
+      color:#ccc;
+      position: absolute;
+      top:50%;left:50%;
+      margin:-16px 0 0 -16px;
+    }
+    .iconbofang1:hover{color:#fff !important;}
+
+    .subContentM dl{
+      width:220px;height:98px;
+      display:inline-block;
+      overflow:hidden;
+      font-size:14px;
+      color:#555;
+      padding:15px 10px;
+      background:rgba(0,0,0,.05)
+    }
+    .subContentM dl dt{
+      font-size:14px;
+      font-weight:bold;
+    }
+    .subContentM dl dd{
+      width:180px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      line-height:24px;
+    }
+
+    .subContentM dl a{
+      color:#555;
+    }
+    .subContentM li span{
+      position:absolute;
+      top:40%;right:2%;
+      color:#aaa;
+      font-weight:lighter;
+    }
+
+/*第一个横广告*/
+    .advert{
+    width:1000px;
+      margin:0 auto 20px;;
+      padding-top:16px;
+    }
+
+/* 第一个横广告下面的新歌首发 */
+    .subContentM2{
+      width:1000px;height:375px;
+      margin:40px auto 17px;
+      
+    }
+    .subContentM2 .itemTitle{
+      float: left;
+      width:650px;height:51px;
+      position:relative;
+      border-bottom:1px solid #e8e8e8;
+      margin-bottom:12px;
+    }
+    .subContentM2 .itemTitle button:hover{
+      border: 1px solid #009af3;
+      color:#009af3;
+    }
+    .subContentM2 .itemTitle button:hover a{color:#009af3 !important;}
+    .subContentM2 .itemTitle a{
+      color:#555;
+    }
+
+    .subContentM2 .itemContent{
+      width:650px;height:320px;
+      float:left;
+      position: relative;
+      overflow: hidden;
+    }
+    .subContentM2 .itemContent>div:not([class='pages']){
+      position: relative;
+      width:650px;height:280px;
+      overflow: hidden;
+    }
+
+    .itemTitle h3{
+      font-size:28px;
+      color:#555;
+      font-weight:lighter;
+      float:left;
+    }
+    .itemTitle h3>span{color:#009af3;}
+
+    .newSongList .itemTitle>ul{
+      float:left;
+      display:flex;justify-content:space-between;
+      width:183px;
+      margin-left:40px;
+      padding-top:7px;
+      font-size:14px;
+      
+    }
+    .newSongList .itemTitle button{
+      width:90px;height:30px;
+      border:1px solid #dbdbdb;
+      font-size:13px;
+      border-radius:2px;
+      padding:5px 10px;
+      position:absolute;
+      top:6px;right:10px;
+      background:#fff;
+    }
+    .newSongList .itemTitle .playAll{
+      margin-right:4px;
+    }
+
+    .subContentM2 .itemContent ul{
+      width:650px;
+    }
+
+    .subContentM2 .itemContent ul>li{
+      height:35px;
+      line-height:35px;
+      font-size:13px;
+      padding:0 10px 0 10px;
+    }
+    .subContentM2 .itemContent ul>li:hover{
+      background:rgba(0,0,0,.1);
+    }
+    .subContentM2 .itemContent ul>li a{color:#333;}
+    .subContentM2 .itemTitle .active{color:#0aa1ed;}
+    .songTime{float:right;}
+    .subContentM2 .itemContent .playBtn,.subContentM2 .itemContent .downloadBtn{
+      float:right;
+    }
+    .itemContent .playBtn{margin:0 10px;}
+
+
+    /* 右方推荐MV */
+    .subContentM2 .albumList {
+      width:320px;height:50px;
+      float: right;
+      margin-top:-63px;
+      margin-bottom: 20px;
+    }
+    .subContentM2 .albumList>.itemTitle{
+      width:100%;
+    }
+    .subContentM2 .albumList>.itemTitle a{
+      font-size:13px;
+      float:right;
+      line-height: 50px;
+    }
+
+    .subContentM2 .itemContent2{
+      width:320px;
+      float:right;
+      
+    }
+    .subContentM2 .itemContent2>div:not(:first-child) .Cover{
+      height: 86px !important;
+    }
+
+    .subContentM2 .cptBigL img{
+      width:320px;height: 184px;
+    }
+    .subContentM2 .cptMidL1 img{
+      width:154px;
+    }
+    .subContentM2 .cptMidL1{
+      float: left;
+    }
+    .subContentM2 .cptMidL2 {
+      float: right;
+    }
+    .subContentM2 .cptMidL2 img{
+      width:154px;height: 84px;
+    }
+    .subContentM2 .cptMidL1,
+    .subContentM2 .cptMidL2{
+      width:154px;height:84px;
+      margin-top:12px;
+    }
+    .subContentM2 .cptMidL1::after,
+    .subContentM2 .cptMidL2::after{
+      content:'';
+      display:block;
+      clear: both;
+      width:154px;height:84px;
+    }
+
+    .subContentM2 .itemContent2>div{
+      position:relative;
+    }
+    .subContentM2 .itemContent2>.cptBigL>.cptB{
+      position:absolute;
+      width:100%;
+      bottom:4px;
+      padding:8px;
+      color:#fff;
+      font-size:14px;
+      background:rgba(0,0,0,.3);
+    }
+
+    .subContentM2 .itemContent2 .sn{
+      font-size:14px;color:#555;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .subContentM2 .itemContent2 .en{
+      font-size:12px;
+      color:#555;
+    }
+
+    .subContentM2 .itemContent2 .Cover{
+      width:100%;height:184px;
+      z-index: 99;
+      position: absolute;
+      cursor: pointer;
+    }
+    .subContentM2 .itemContent2 .Cover:hover{
+      background:rgba(0,0,0,.3) ;
+    }
+    .subContentM2 .itemContent2 .Cover:hover>.iconbofang1{
+      display: block;
+    }
+    .subContentM2 .itemContent2 .iconbofang1{
+      font-size: 36px;
+      display: none;
+      color: #ccc;
+      position: absolute;
+      top:50%;left:50%;
+      margin:-18px 0 0 -18px;
+    }
+    .subContentM2 .itemContent2 .iconbofang1:hover{color:#fff}
+    .subContentM2 .itemContent{position: relative;}
+    .subContentM2 .itemContent .pages{
+      text-align: center;
+      position: absolute;
+      bottom:0;
+      left:50%;
+      margin-left: -32px;
+    }
+
+    /* 第二个广告下面的热门电台 */
+    .subContentM3{width:1000px;height:370px;
+      margin:40px auto 0;
+    }
+
+    .subContentM3 .sub1{width:650px;height:370px;
+      float:left;
+    }
+    .subContentM3 .sub2{width:330px;height:370px;
+      float:right;
+    }
+    .subContentM3 .itemTitle h3{
+      display:flex;
+      justify-content: space-between;
+    }
+    .sub1 .itemTitle,.sub2 .itemTitle{height:60px;padding-bottom:30px;
+      line-height: 60px;
+      position: relative;
+    }
+    .sub1 .itemTitle h3 span,.sub2 .itemTitle h3 span{color:#009af3;}
+    .subContentM3 .more{
+      font-size:13px;
+      color:#999;
+      position: absolute;
+      right:10px;
+    }
+    .sub1 a:hover,.sub2 a:hover{color:#009af3;}
+
+    .sub2 ul{
+      width:144px;
+      display:flex;
+      font-size:14px;
+      justify-content: space-around;
+      
+    }
+
+    .sub1 ul{
+      width:100%;height:100%;
+      display:flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .sub1 li{
+      width:20%;height:155px;
+      text-align: center;
+      position:relative;
+    }
+    .sub1 li img{
+      display:block;
+      width:100px;
+      margin: 0 auto 10px;
+    }
+    .sub1 li a{
+      display: block;
+      font-size: 14px;
+      color:#555;
+    }
+    .sub1 .cover{
+      width:100px;height:100px;
+      border-radius:50%;
+      background: rgba(0,0,0,0);
+      position:absolute;
+      top:0;left:15px;
+      z-index: 99;
+    }
+    .sub1 .cover:hover{background: rgba(0,0,0,.4);}
+
+    .sub2 .top,.sub2 .bottom{width:100%;
+    }
+    .sub2 .top,.sub2 .bottom{
+      height:160px;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+    
+    .sub2 .bottom img{width:105px;}
+    .sub2 .top img{width:100%;height:160px;}
+    .sub2 .c{position: relative;}
+    .sub2 .top .c{
+      width:160px;height:160px;
+    }
+    .sub2 .bottom .c{
+      width:105px;height:105px;
+    }
+    .sub2 .c p{font-size:14px;color:#fff;
+      margin-top:-30px;
+      padding-left:10px 
+    }
+    .sub2 .bottom{
+      height:105px;
+      padding-top:8px;
+    }
+    .sub2 .cover{
+      width:100%;height:100%;
+      position: absolute;
+      top:0;
+    }
+    .sub2 .cover:hover{background:rgba(0,0,0,.4);}
+    .sub2 .pages{
+      display:flex;
+      width:100%;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .sub2 .pages li{
+      width:6px;height:6px;
+      background:#aaa;
+      border-radius:50%;
+      margin:0 6px;
+      cursor:pointer;
+    }
+
+    .toTop{
+      display:block;
+      width:50px;height:50px;
+      background:#aaa;
+      font-size:40px;
+      color:#fff;
+      text-align:center;
+      line-height:45px;
+      position: fixed;
+      right:13%;bottom:12%;
+      border-radius:3px;
+    }
+    .toTop:hover{
+      background:#888;
+    }
+
+
+
+
+
+
+
+.newSongTab{
+  position:absolute;
+  background-color: #fff;
+}
+.newSongTab li:hover .newSTit,
+.newSongTab li:hover .songTime{
+  color: #169af3;
+}
+#newSongTab1{
+  z-index: 10;
+}
+
+
+
+
+/* 登录框 */
+.dlCover{
+  position: fixed;
+  z-index: 100;
+  width: 100%;height:100%;
+  background-color:rgba(0,0,0,.5);
+  display: none;
+}
+#KgPopupLoginBox{
+  width:440px;height:378px;
+  background-color: aliceblue;
+  position: absolute;
+  top:50%;left:50%;
+  margin:-220px 0 0 -204px;
+}
+#KgPopupLoginBox .close{
+  color:#fff;
+  font-size: 48px;
+  font-weight: lighter;
+  cursor: pointer;
+  position: absolute;
+  right: -4px;top:-36px;
+  display: inline-block;
+  width:32px;height:32px;
+  line-height: 32px;
+}
+.logTip1{
+  font-size: 20px;
+  color:#333;
+  text-align: center;
+  margin:64px 0 29px 0;
+}
+.erweimaDiv{
+  width:100%;height: 155px;
+  position: relative;
+
+}
+.erweima{
+  display: block;
+  margin:0 auto;
+  position: absolute;
+  /* left: 36px; */
+  left: 143px;
+  transition: all .5s;
+}
+.erweimaDiv:hover>.erweima{
+  left: 36px;
+}
+.erweimaDiv:hover>.erweima2{
+  opacity: 1;
+}
+.opSj{
+  margin-top: 20px;
+  color:#333;
+  font-size: 14px;
+  text-align: center;
+}
+.erweima2{
+  display: block;
+  width:173px;height:155px;
+  position: absolute;
+  right:36px;
+  opacity: 0;
+  transition: all .5s;
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/comm.css">
+  <link rel="stylesheet" href="css/header.css">
+  <style>
+    .showList .hide{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header id="totalHeader">
+    <!-- 头部 -->
+    <div id="header">
+      <a href=""><img src="img/35.png" alt=""></a>
+      <div class="search_input">
+        <input type="text" placeholder="Imagine Dragons Natural">
+        <div class="sear">
+          <span class="iconfont iconsousuo"></span>
+        </div>
+        <ul class="showList">
+          <li class="clearHistory hide">清除历史记录</li>
+        </ul>
+      </div>
+
+      <div class="topNav">
+        <ul>
+          <li>
+            <a href="">客服中心</a>
+          </li>
+          <li>
+            <a href="">招贤纳士</a>
+          </li>
+          <li>
+            <a href="">会员中心</a>
+          </li>
+        </ul>
+        <a id="login" href="javascript:; ">登录</a>
+      </div> 
+    </div>
+
+    <div class="navWrap">
+      <div class="nav">
+        <ul class="homeNav">
+          <li>
+            <a href="index.html">首页</a>
+          </li>
+          <li>
+            <a href="rank.html">榜单</a>
+          </li>
+          <li>
+            <a href="javascript:;">下载客户端</a>
+          </li>
+          <li class="homeNavMore">
+            <a href="javascript:;">更多&nbsp;<span class="iconfont iconxiajiantou">&nbsp;</span></a>
+            <ul class="homeNavMoreHide">
+              <li><a href="javascript:;">电台</a></li>
+              <li><a href="javascript:;">MV</a></li>
+              <li><a href="javascript:;">歌单</a></li>
+              <li><a href="javascript:;">歌手</a></li>
+            </ul>
+          </li>
+        </ul>
+    
+        <ul class="subNav">
+          <li><a href="javascript:;"><span class="iconfont iconai64"></span> 音乐直播</a></li>
+          <li><a href="javascript:;"><span class="iconfont icondilanxianxingiconyihuifu_huabanfuben"></span> 酷狗LIVE</a></li>
+          <li><a href="javascript:;"><span class="iconfont icondilanxianxingiconyihuifu_huabanfuben "></span> 音乐人</a></li>
+          <li><a href="javascript:;"><span class="iconfont iconhuatong"></span> 主播电台</a></li>
+          <li><a href="javascript:;"><span class="iconfont icongouwudai"></span> 商城</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</body>
+
+<script>
+  // 
+  $('.search_input .sear').click(function(){
+    var $ul=$('.showList');
+    $ul.html(`<li class="clearHistory hide">清除历史记录</li>`);
+    $('#header>.search_input>input').focus();
+    var kw=$('#header>.search_input>input').val().trim();
+    if(kw!==''){
+      // console.log( `正在搜索${kw}的内容`);
+      $.ajax({
+        url:`/song/v1/allsong/${kw}`,
+        type:'get',
+        success:(res)=>{
+          $('.showList li:last-child').removeClass('hide');
+          $hide=$ul.children(':hidden');
+          $hide.removeClass('hide');
+          for(var i=0;i<res.length;i++){
+            $li=$(`<li>${res[i].name}</li>`);
+            $li.insertBefore($ul.children(':last-child'));
+            if(i>3){break;}
+          }
+        }
+      });
+    }
+  });
+  // 搜索框获得焦点显示历史搜索框
+  $('#header>.search_input>input').focus(function(){
+    $('.showList li:last-child').removeClass('hide');
+    $('.showList').show();
+    if($(this).html().trim()===''){
+      $('.showList').html(`<li class="clearHistory hide">清除历史记录</li>`);
+    }
+  }).blur(function(){
+    $('.showList li:last-child').addClass('hide');
+    $('.showList').hide();
+  });
+  
+  // 模拟触发trigger
+
+</script>
+</html>
